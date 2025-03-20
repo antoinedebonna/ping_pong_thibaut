@@ -147,7 +147,7 @@ with tab1:
     
         # Nombre de victoires pour Antoine et Clément
         victories_antoine = win_counts.get("Antoine", 0)
-        victories_clement = win_counts.get("Clément", 0)
+        victories_Thibaut = win_counts.get("Clément", 0)
     
         # Créer un graphique camembert avec Plotly
         fig_pie = px.pie(
@@ -180,7 +180,7 @@ with tab1:
                 dict(
                     x=0.9,  # Positionnement à l'extrémité droite
                     y=0.7,  # Plus haut dans la section
-                    text=f"<b>Clément</b><br>{victories_clement} victoires",  # Nom de Clément et son nombre de victoires
+                    text=f"<b>Clément</b><br>{victories_Thibaut} victoires",  # Nom de Clément et son nombre de victoires
                     font=dict(size=30, color="black"),  # Grande taille de texte et couleur noire
                     showarrow=False
                 ),
@@ -288,11 +288,11 @@ with tab2:
 
         if submit:
             score_antoine = sum(1 for s in set_scores if s[0] > s[1])
-            score_clement = sum(1 for s in set_scores if s[1] > s[0])
+            score_Thibaut = sum(1 for s in set_scores if s[1] > s[0])
 
-            result_antoine = "✅ V" if score_antoine > score_clement else "❌ D"
-            result_clement = "✅ V" if score_clement > score_antoine else "❌ D"
+            result_antoine = "✅ V" if score_antoine > score_Thibaut else "❌ D"
+            result_Thibaut = "✅ V" if score_Thibaut > score_antoine else "❌ D"
 
             worksheet.append_row([str(date), terrain, "Antoine", result_antoine] + [s[0] for s in set_scores] + [score_antoine, remarks])
-            worksheet.append_row([str(date), terrain, "Clément", result_clement] + [s[1] for s in set_scores] + [score_clement, ""])
+            worksheet.append_row([str(date), terrain, "Clément", result_Thibaut] + [s[1] for s in set_scores] + [score_Thibaut, ""])
             st.success("Match ajouté !")
