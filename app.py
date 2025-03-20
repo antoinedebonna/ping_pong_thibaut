@@ -96,7 +96,7 @@ st.markdown(
 
 
 # URL d'export CSV de Google Sheets
-CSV_URL = "https://docs.google.com/spreadsheets/d/1S9mBu7_hSwSb0JQH-jAQNRUlOWQho6HcGoLJ8B0QjaI/export?format=csv"
+CSV_URL = "https://docs.google.com/spreadsheets/d/1ANgGL7Z6b8oHQqdN3KUEP8XUthDAHVk4V1GFK5FmQNA/edit?usp=sharing"
 
 # Charger les données depuis Google Sheets
 def load_data():
